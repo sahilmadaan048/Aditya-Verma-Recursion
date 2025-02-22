@@ -16,7 +16,7 @@ print these
 #define vi vector<int>
 #define vvi vector<vi >
 #define vb vector<bool>
-#define vvb vector<vb >
+#define vvb vector<vb > 
 #define fr(i,n) for(int i=0; i<(n); i++)
 #define rep(i,a,n) for(int i=(a); i<=(n); i++)
 #define nl cout<<"\n"
@@ -57,7 +57,6 @@ void print(string &s, string &curr, vector<string>& ans, int idx, int n) {
     if(idx != n-1){
         curr.push_back(s[idx]);
         curr.push_back(' ');
-
         print(s, curr, ans, idx+1, n);
         curr.pop_back();
         curr.pop_back();
@@ -91,5 +90,3 @@ int32_t main()
     }
     return 0;
 }
-
-    
