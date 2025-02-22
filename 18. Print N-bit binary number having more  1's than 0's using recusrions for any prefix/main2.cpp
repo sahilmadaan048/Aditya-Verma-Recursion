@@ -3,6 +3,9 @@ we have to store all the prefixess such that #1 is #0 for wach of the prefix
 
 */
 
+
+
+
 #include "bits/stdc++.h"
 #define int long long
 #define uint unsigned long long
@@ -82,7 +85,7 @@ void print(int n, string curr, vector<string> &ans, int one, int zero)
 
 void solve()
 {
-    int n = 6; // Change as needed
+    int n = 4; // Change as needed
     vector<string> ans;
     print(n, "", ans, 0, 0);
 

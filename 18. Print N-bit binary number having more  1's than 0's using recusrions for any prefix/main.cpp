@@ -80,11 +80,14 @@ template<typename typC> ostream &operator<<(ostream &cout,const vector<typC> &a)
 // }
 
 
+/*
+code to print all buinary strings f length n
+*/
 
 
 void print(int n, string curr, vector<string>& ans, int one, int zero) {
     if (curr.length() == n) {
-        if(one>zero){
+        if(one>=zero){
             ans.push_back(curr);
         }
         return;
@@ -93,14 +96,33 @@ void print(int n, string curr, vector<string>& ans, int one, int zero) {
     print(n, curr+"1", ans, one+1, zero);
     
     //add zero onelu oif one>zero
-    if(one>zero){
+    if(one>=zero){
         print(n, curr+"0", ans, one, zero+1);
     }
 }
 
+
+void generate(int n, string curr, int ones, int zeros, vector<string>& result) {
+    if (curr.length() == n) {
+        if (ones >= zeros) {  // Ensure total 1s are >= total 0s
+            result.push_back(curr);
+        }
+        return;
+    }
+
+    // Always add '1'
+    generate(n, curr + "1", ones + 1, zeros, result);
+
+    // Add '0' only if ones >= zeros
+    // if (ones >= zeros) {
+        generate(n, curr + "0", ones, zeros + 1, result);
+    // }
+}
+
 void solve() {
-    int n = 6; // Change as needed
+    int n = 4; // Change as needed
     vector<string> ans;
+    // generate(n, "", 0, 0, ans);
     print(n, "", ans, 0, 0);
 
     for (const auto& str : ans) {
@@ -125,3 +147,4 @@ int32_t main()
 }
 
     
+
